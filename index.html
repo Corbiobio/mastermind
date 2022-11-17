@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link css here only when ccs is not imported in js yet -->
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
-    <title>Hello</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- <script src="./js/app.js" type="module"></script> -->
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description du site">
+  <title> titre du site </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <nav>
+    <button id="firstbtn"></button>
+    <button id="secondbtn"></button>
+    <button id="thirdbtn"></button>
+    <button id="lastbtn"></button>
+  </nav>
+
+  <div id="mastermind">
+
+    <div id="togest">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div id="board">
+
+      <div class="line">
+
+        <div class="dot">
+          <button class="get">1</button>
+          <button class="get">2</button>
+          <button class="get">3</button>
+          <button class="get">4</button>
+        </div>
+
+        <!-- pbleu,pjaune,prouge,pvert -->
+
+        <div class="scores">
+          <div></div>
+          <div></div>
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <button id="valid">VALIDER</button>
+
+  </div>
+
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+
 </html>

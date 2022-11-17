@@ -6,7 +6,6 @@
 
 :root {
     --dot-size: 75px;
-
 }
 
 body {
@@ -14,13 +13,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #919191;
+    background-color: #5e5c5c;
 }
 
 #mastermind {
     background-color: black;
-    height: 600px;
-    width: 400px;
+    height: 603px;
+    width: 403px;
+    border: 3px solid #919191;
 }
 
 #togest {
@@ -33,8 +33,9 @@ body {
 #togest div {
     width: var(--dot-size);
     height: var(--dot-size);
-    background-color: #2f1ec7;
+    background-color: #1e6dc7;
     border-radius: 50%;
+    border: 5px solid #22177c;
 }
 
 .line {
@@ -59,11 +60,105 @@ body {
 }
 
 
-.dot div {
+.pbleu {
     width: var(--dot-size);
     height: var(--dot-size);
-    background-color: #2f1ec7;
+    background-color: #1e6dc7;
     border-radius: 50%;
+    border: 5px solid #22177c;
+    cursor: pointer;
 }
 
-.scores div
+.prouge {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: #ff3300;
+    border-radius: 50%;
+    border: 5px solid #be3e1e;
+    cursor: pointer;
+}
+
+.pjaune {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: #fbff00;
+    border-radius: 50%;
+    border: 5px solid #a5be18;
+    cursor: pointer;
+}
+
+.pvert {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: #0de91f;
+    border-radius: 50%;
+    border: 5px solid #0f921a;
+    cursor: pointer;
+}
+
+.get {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: #5a5a58;
+    border-radius: 50%;
+    border: 5px solid #272725;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.scores div {
+    height: 50%;
+    width: 100%;
+}
+
+.scores div:first-of-type {
+    background-color: rgb(14, 216, 7);
+    border-bottom: 3px solid #919191;
+}
+
+.scores :last-child {
+    background-color: #FF8C00;
+}
+
+
+nav {
+    position: absolute;
+    background-color: white;
+    height: 100px;
+    width: 250px;
+    display: flex;
+    margin: 5px;
+    border: 3px solid #222121;
+    border-right: none;
+    display: none;
+}
+
+nav button {
+    height: 100%;
+    width: 25%;
+    background: none;
+    border: none;
+}
+
+#firstbtn {
+    background-color: #1e6dc7;
+    border-right: 3px solid #222121;
+}
+
+#secondbtn {
+    background-color: #ff3300;
+    border-right: 3px solid #222121;
+}
+
+#thirdbtn {
+    background-color: #fbff00;
+    border-right: 3px solid #222121;
+}
+
+#lastbtn {
+    background-color: #0de91f;
+    border-right: 3px solid #222121;
+}
