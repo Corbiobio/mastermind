@@ -1,18 +1,3 @@
-// class Pion {
-//     colors = ["blue", "red", "green"]
-//     color = "red";
-//     constructor(color) {
-//         this.color = color
-//     }
-//     checkColor() {
-//         return this.colors.some((item) => { return item === this.color })
-//     }
-// }
-
-// let p1 = new Pion("blue");
-
-// console.log(p1.color)
-// console.log(p1.checkColor())
 const piongris = document.getElementsByClassName("get")
 const dot = document.getElementsByClassName("dot")
 const coloredbtn = document.getElementById("coloredbtn")
@@ -23,7 +8,6 @@ const secondbtn = document.getElementById("secondbtn")
 const thirdbtn = document.getElementById("thirdbtn")
 const lastbtn = document.getElementById("lastbtn")
 const valid = document.getElementById("valid")
-let nmbdecoup = 0
 
 
 let elementclicked
@@ -42,7 +26,9 @@ function afficher(el) {
     elementclicked = el
 }
 
-function displaybnt() {
+
+function displaybnt(btn) {
+
     const btnContainer = document.getElementsByClassName("dot")
     for (let index = 0; index < btnContainer.length; index++) {
         const btn = btnContainer[index];
@@ -53,6 +39,20 @@ function displaybnt() {
     }
 }
 
+// function displaybnt(btn) {
+// const btn1 = document.getElementById("1")
+// const btn2 = document.getElementById("2")
+// const btn3 = document.getElementById("3")
+// const btn4 = document.getElementById("4")
+// 
+// btn1.addEventListener("click", () => afficher(btn1))
+// btn2.addEventListener("click", () => afficher(btn2))
+// btn3.addEventListener("click", () => afficher(btn3))
+// btn4.addEventListener("click", () => afficher(btn4))
+// 
+// }
+
+
 firstbtn.addEventListener("click", function () {
     elementclicked.className = ""
     elementclicked.classList.add("get", "pionbleu")
@@ -62,6 +62,7 @@ secondbtn.addEventListener("click", function () {
     elementclicked.className = ""
     elementclicked.classList.add("get", "pionrouge")
     coloredbtn.style.display = "none"
+
 })
 thirdbtn.addEventListener("click", function () {
     elementclicked.className = ""
@@ -74,37 +75,39 @@ lastbtn.addEventListener("click", function () {
     coloredbtn.style.display = "none"
 })
 
-function create() {
+
+valid.addEventListener("click", function () {
     const btn1 = document.getElementById("1")
     const btn2 = document.getElementById("2")
     const btn3 = document.getElementById("3")
     const btn4 = document.getElementById("4")
     const dotreplace = document.getElementsByClassName("dot")
-
     if (btn1.classList.contains("pionbleu") || btn1.classList.contains("pionrouge") || btn1.classList.contains("pionjaune") || btn1.classList.contains("pionvert")) {
         if (btn2.classList.contains("pionbleu") || btn2.classList.contains("pionrouge") || btn2.classList.contains("pionjaune") || btn2.classList.contains("pionvert")) {
             if (btn3.classList.contains("pionbleu") || btn3.classList.contains("pionrouge") || btn3.classList.contains("pionjaune") || btn3.classList.contains("pionvert")) {
                 if (btn4.classList.contains("pionbleu") || btn4.classList.contains("pionrouge") || btn4.classList.contains("pionjaune") || btn4.classList.contains("pionvert")) {
 
-                    console.log(nmbdecoup);
-                    if (nmbdecoup === 6) {
-                        return alert("vous avez perdu !")
-                    }
+
+
 
                     let togchild = togest.children
                     let soluce = []
                     for (let i = 0; i < togchild.length; i++) {
                         soluce.push(togchild[i].classList.value)
                     }
+
                     let dotchild = dot[0].children;
                     let reponse = []
                     for (let i = 0; i < dotchild.length; i++) {
                         reponse.push(dotchild[i].classList[1]);
                     }
-
                     let bon = 0
                     let mal = 0
                     let mauvais = 0
+
+
+
+
 
                     for (let i = 3; i >= 0; i--) {
                         if (reponse[i] === soluce[i]) {
@@ -112,40 +115,82 @@ function create() {
                             reponse.splice(i, 1)
                             soluce.splice(i, 1)
                         }
-                        if (reponse.length === 0) {
-                            return alert("gg")
-                        }
+                        console.log(i);
+                    }
+                    console.log(reponse);
+
+                    if (reponse) {
+                        alert("gg")
                     }
                     console.log(soluce);
                     console.log(reponse);
+
                     for (let i = 0; i < soluce.length; i++) {
-                        for (let j = 0; j < soluce.length; j++) {
-                            if (reponse[i] === soluce[j]) {
-                                mal++
-                                soluce[j] = "est bon mais mal placer"
-                            } else {
-                                mauvais++
-                            }
-                        }
+
+
                     }
-                    nmbdecoup++
+
+
+
+
+
+
+
+
+
+
+                    // for (let i = 0; i < soluce.length; i++) {
+                    //     for (let j = 0; j < soluce.length; j++) {
+                    //         if (reponse[i] === soluce[j]) {
+                    //             mal++
+                    //         } else {
+                    //             // mauvais++;
+                    //             // reponse[i] = ""
+                    //         }
+                    //     }
+                    // }
+
+
+
+
+
+
+
 
                     console.log("bon :" + bon, "mal :" + mal, "mauvais :" + mauvais);
 
 
-                    const actuelscore = document.getElementsByClassName("scores")
-                    let modifscore = actuelscore[0].children
-                    modifscore[0].textContent = bon
-                    modifscore[1].textContent = mal
-                    actuelscore[0].classList = "oldscores"
 
 
+
+
+
+
+
+
+
+
+                    // btn1.removeEventListener("click", () => afficher(btn1));
+                    // btn2.removeEventListener("click", afficher);
+                    // btn3.removeEventListener("click", afficher);
+                    // btn4.removeEventListener("click", afficher);
 
                     btn1.removeAttribute("id")
                     btn2.removeAttribute("id")
                     btn3.removeAttribute("id")
                     btn4.removeAttribute("id")
+
+                    // console.log(dotreplace);
                     dotreplace[0].classList = "olddot"
+
+
+
+
+
+
+
+
+
 
                     coloredbtn.style.display = "none"
                     let line = document.createElement("div")
@@ -167,7 +212,7 @@ function create() {
                     scores.appendChild(document.createElement("div"))
                     scores.appendChild(document.createElement("div"))
 
-                    displaybnt()
+                    displaybnt(piongris)
 
                 } else {
                     alert("Tout les pions n'ont pas de couleurs")
@@ -185,10 +230,8 @@ function create() {
         alert("Tout les pions n'ont pas de couleurs")
         coloredbtn.style.display = "none"
     }
-}
-
-valid.addEventListener("click", () => {
-    create()
 })
 
-displaybnt()
+
+
+displaybnt(piongris)

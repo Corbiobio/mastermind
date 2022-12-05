@@ -2,10 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --dot-size: 75px;
+    font-family: sans-serif;
+    font-size: 16px;
 }
 
 body {
@@ -18,8 +16,8 @@ body {
 
 #mastermind {
     background-color: black;
-    height: 603px;
-    width: 403px;
+    height: 600px;
+    width: 400px;
     border: 3px solid #919191;
 }
 
@@ -28,14 +26,17 @@ body {
     flex-direction: row;
     justify-content: space-around;
     border-bottom: 3px solid #919191;
+    display: none;
+
 }
 
 #togest div {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    background-color: #1e6dc7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    border: 5px solid #22177c;
 }
 
 .line {
@@ -44,12 +45,24 @@ body {
 }
 
 .dot {
-    height: 78px;
     width: 90%;
     border-bottom: 3px solid #919191;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.olddot {
+    width: 90%;
+    border-bottom: 3px solid #919191;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+button {
+    cursor: pointer;
+    border: 2px solid #15c3ee;
 }
 
 .scores {
@@ -59,70 +72,50 @@ body {
     border-bottom: 3px solid #919191;
 }
 
-
-.pbleu {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    background-color: #1e6dc7;
-    border-radius: 50%;
-    border: 5px solid #22177c;
-    cursor: pointer;
-}
-
-.prouge {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    background-color: #ff3300;
-    border-radius: 50%;
-    border: 5px solid #be3e1e;
-    cursor: pointer;
-}
-
-.pjaune {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    background-color: #fbff00;
-    border-radius: 50%;
-    border: 5px solid #a5be18;
-    cursor: pointer;
-}
-
-.pvert {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    background-color: #0de91f;
-    border-radius: 50%;
-    border: 5px solid #0f921a;
-    cursor: pointer;
-}
-
-.get {
-    width: var(--dot-size);
-    height: var(--dot-size);
-    background-color: #5a5a58;
-    border-radius: 50%;
-    border: 5px solid #272725;
-    cursor: pointer;
-}
-
-button {
-    cursor: pointer;
-}
-
-.scores div {
+.scores div:first-of-type {
+    background-color: rgb(14, 216, 7);
+    border-bottom: 3px solid #919191;
     height: 50%;
     width: 100%;
 }
 
-.scores div:first-of-type {
-    background-color: rgb(14, 216, 7);
+.scores :last-child {
+    background-color: #FF8C00;
+    height: 50%;
+    width: 100%;
+}
+
+.scores div {
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+}
+
+.oldscores {
+    height: 78px;
+    width: 10%;
+    border-left: 3px solid #919191;
     border-bottom: 3px solid #919191;
 }
 
-.scores :last-child {
-    background-color: #FF8C00;
+.oldscores div:first-of-type {
+    background-color: rgb(14, 216, 7);
+    border-bottom: 3px solid #919191;
+    height: 50%;
+    width: 100%;
 }
 
+.oldscores :last-child {
+    background-color: #FF8C00;
+    height: 50%;
+    width: 100%;
+}
+
+.oldscores div {
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+}
 
 nav {
     position: absolute;
@@ -141,24 +134,57 @@ nav button {
     width: 25%;
     background: none;
     border: none;
+    border-right: 3px solid #222121;
 }
 
 #firstbtn {
     background-color: #1e6dc7;
-    border-right: 3px solid #222121;
 }
 
 #secondbtn {
     background-color: #ff3300;
-    border-right: 3px solid #222121;
 }
 
 #thirdbtn {
     background-color: #fbff00;
-    border-right: 3px solid #222121;
 }
 
 #lastbtn {
     background-color: #0de91f;
-    border-right: 3px solid #222121;
+}
+
+.get {
+    width: 75px;
+    height: 75px;
+    background-color: #5a5a58;
+    border-radius: 50%;
+    border: 5px solid #272725;
+    cursor: pointer;
+}
+
+.pionbleu {
+    background-color: #1e6dc7;
+    border: 5px solid #22177c;
+}
+
+.pionrouge {
+    background-color: #ff3300;
+    border: 5px solid #be3e1e;
+}
+
+.pionjaune {
+    background-color: #fbff00;
+    border: 5px solid #a5be18;
+}
+
+.pionvert {
+    background-color: #0de91f;
+    border: 5px solid #0f921a;
+}
+
+#valid {
+    width: 100%;
+    height: 50px;
+    background-color: #15c3ee;
+    border-bottom: 3px solid #919191;
 }
